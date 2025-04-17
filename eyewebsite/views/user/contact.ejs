@@ -1,0 +1,82 @@
+<%-include("navbar.ejs")%>
+
+
+    <div class="container-fluid p-0">
+        <div class="about-banner">
+            <div class="about-overlay"></div>
+            <div class="about-content text-center">
+                <h1 class="fw-bold text-danger">Contact Us</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active text-primary" aria-current="page">Contact Us</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+
+
+   
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4 text-center" data-aos="fade-up" data-aos-duration="1000">
+                <img src="public/1741064246149doctor4.jpg" alt="Doctor" class="img-fluid">
+                <h4>Meet Us</h4>
+                <p><%-intro.hospital_location%></p></p>
+                <h5>Customer Service</h5>
+                <p>Tel: 123-123-1234 (Toll Free Phone)<br>
+                    <%-intro.mobile_no%> <br>
+                   </p>
+            </div>
+            <div class="col-md-8" data-aos="fade-up" data-aos-duration="1200">
+                <div class="mb-4">
+                    <iframe src="https://www.google.com/maps/embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <h2>Fill the form below to contact us</h2>
+                <form action="/save_contact" method="post">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <input type="text" name="contact_name" class="form-control" placeholder="Name">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" name="contact_email" class="form-control" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" name="contact_website" class="form-control" placeholder="Website">
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" name="contact_msg" rows="4" placeholder="Your message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- CREATE TABLE contact(
+        contact_id INT PRIMARY KEY AUTO_INCREMENT,
+        contact_name VARCHAR(20),
+        contact_email VARCHAR(20),
+        contact website TEXT,
+        contact_msg TEXT
+    ) -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+<div class="floating-icons-container">
+    <a href="https://www.facebook.com" target="_blank" class="icon-facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com" target="_blank" class="icon-instagram"><i class="fab fa-instagram"></i></a>
+    <a href="tel:+1234567890" class="icon-phone"><i class="fas fa-phone"></i></a>
+    <a href="https://wa.me/1234567890" target="_blank" class="icon-whatsapp"><i class="fab fa-whatsapp"></i></a>
+</div>
+
+
+    
+    
+
+<%-include("footer.ejs")%>

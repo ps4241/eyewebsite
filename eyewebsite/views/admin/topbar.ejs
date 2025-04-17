@@ -1,0 +1,87 @@
+<%-include("navbar.ejs")%>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/admin/save_topbar" method="post" enctype="multipart/form-data">
+                        <div class="container">
+                            <h1>Navbar</h1>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    Hospital name
+                                    <input type="text" name="hospital_name" class="form-control"
+                                        value="<%-intro.hospital_name%>">
+                                </div>
+
+                                <div class="col-md-4 mb-3">
+                                    Hospital location
+                                    <input type="text" name="hospital_location" class="form-control"
+                                        value="<%-intro.hospital_location%>">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    Select logo
+                                    <input type="file" name="hospital_logo" accept="image/*" action="form-control">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <img src="/public/<%-intro.hospital_logo%>" width="100px">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    Mobile No:
+                                    <input type="text" name="mobile_no" class="form-control"
+                                        value="<%-intro.mobile_no%>">
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    Tag Line
+                                    <input type="text" name="tag_line" class="form-control" value="<%-intro.tag_line%>">
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    Announcement
+                                    <input type="text" name="announcement" class="form-control"
+                                        value="<%-intro.announcement%>">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    Enter Whatsapp link*
+                                    <input type="text" name="whatsapp_link" class="form-control"
+                                        value="<%-intro.whatsapp_link%>">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    Enter Google link*
+                                    <input type="text" name="google_link" class="form-control"
+                                        value="<%-intro.google_link%>">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    Enter facebook link*
+                                    <input type="text" name="facebook_link" class="form-control"
+                                        value="<%-intro.facebook_link%>">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    Enter twitter Link*
+                                    <input type="text" name="twitter_link" class="form-control"
+                                        value="<%-intro.twitter_link%>">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    Enter institute opening hours*
+                                    <input type="text" name="opening_hours" class="form-control"
+                                        value="<%-intro.opening_hours%>">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    Enter email*
+                                    <input type="email" name="email" class="form-control" value="<%-intro.email%>">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    Enter appointment Day*
+                                    <input type="text" name="appointment_day" class="form-control"
+                                        value="<%-intro.appointment_day%>">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <button class="btn btn-primary">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%-include("footer.ejs")%>

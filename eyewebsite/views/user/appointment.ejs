@@ -1,0 +1,165 @@
+<%-include("navbar.ejs")%>
+
+
+    <div class="container-fluid p-0">
+        <div class="about-banner">
+            <div class="about-overlay"></div>
+            <div class="about-content text-center">
+                <h1 class="fw-bold text-danger">Appointment</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active text-primary" aria-current="page">Appointment</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 animate__animated animate__fadeInUp">
+                <div class="form-container">
+                    <h2 class="text-center">Fill in the Form Below to Get an Appointment</h2>
+                <form id="appointmentForm" action="/user/save_appoint" method="post" enctype="multipart/form-data">
+                    
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Your Full Name *</label>
+                                <input type="text" name="appoint_name" class="form-control" placeholder="Name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Your Phone# *</label>
+                                <input type="text" name="appoint_phone" class="form-control" placeholder="Phone" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Preferred Date *</label>
+                                <input type="date" name="appoint_date" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Preferred time *</label>
+                                <input type="time" name="appoint_time" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Your Message</label>
+                            <textarea class="form-control" name="appoint_msg" rows="4" placeholder="Your message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary submit-btn w-100">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-4 sidebar-info animate__animated animate__fadeInRight">
+                <div class="p-3 bg-light rounded">
+                    <h5 class="text-danger">Is Lasik Secure?</h5>
+                    <p>From the last 30 years, we are in the industry and have the honor.<br>📞 123-123-1234</p>
+                    <h5 class="text-danger">Special Techniques</h5>
+                    <p>We are providing special visual teaching techniques to help you grow faster.</p>
+                    <h5 class="text-danger">Qualified Staff</h5>
+                    <p>Our best industry-qualified professionals give you the best knowledge.</p>
+                    <h5 class="text-danger">Get Admission</h5>
+                    <p>Rush before all seats are reserved for the current batch.<br>📞 123-123-1234</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+    <div class="container my-5">
+        <!-- Section Title -->
+        <div class="text-center mb-4">
+            <h2 class="section-title">WHY CHOOSE <span>US?</span></h2>
+            <p>We Have Best Professional Team To Care Your Eyes</p>
+            <hr class="w-25 mx-auto border-2 border-dark">
+        </div>
+    
+        <div class="row">
+            <!-- FAQ Section -->
+            <div class="col-12 col-md-7">
+                <div class="faq-container">
+                    <div class="accordion" id="faqAccordion">
+                        <!-- FAQ 1 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    Do we provide consultation for free?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries but also the leap into electronic typesetting.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FAQ 2 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Is our procedure latest to technology?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, we use the latest cutting-edge technology for all our procedures to ensure the best care.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FAQ 3 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Do we respect your time and care your eyes most?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our team ensures timely appointments and the best possible eye care solutions.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FAQ 4 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    What financial solutions do we have to help you?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We provide flexible financing options and insurance coverage to make your treatment accessible.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Testimonial Section -->
+            <div class="col-12 col-md-5">
+                <div class="testimonial">
+                    A quick brown fox jumps over the lazy dog. Yeh shaam mastani madhosh kiye jaaye, mujhe dor koi khiche teri orh liye jaye. Once upon a time, there was a thirsty crow who flew here and there in search of water but could not find it anywhere.
+                </div>
+                <div class="testimonial-author">
+                    <img src="/assets/testi3.jpg" alt="User">
+                    <div>
+                        <h6>TINA DOE</h6>
+                        <p>IMPORTANT PERSON, SOME COMPANY</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <%-include("footer.ejs")%>

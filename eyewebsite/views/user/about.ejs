@@ -1,0 +1,240 @@
+<%-include("navbar.ejs")%>
+
+
+
+    <div class="container-fluid p-0">
+        <div class="about-banner">
+            <div class="about-overlay"></div>
+            <div class="about-content text-center">
+                <h1 class="fw-bold text-danger">About Us</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active text-primary" aria-current="page">About Us</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+
+
+    <div class="container py-5">
+        <!-- Image Row -->
+        <div class="row justify-content-center" data-aos="fade-left" data-aos-duration="700">
+            <div class="col-md-8 text-center">
+                <img src="/user_assets/optometrist-feature (1).png" alt="Contact Lens" class="circle-img">
+            </div>
+        </div>
+    
+        <!-- About Section -->
+        <div class="row mt-4 text-center" data-aos="fade-right" data-aos-duration="1000">
+            <div class="col-md-12">
+                <h2>ABOUT <span class="text-warning"><%-aboutus.about_title%></span></h2>
+                <p class="fw-bold"><%-aboutus.about_tagline%></p>
+                <p><%-aboutus.about_details%></p>
+                
+                <h5 class="mt-3"><strong><%-aboutus.main_doctor%></strong></h5>
+                <p>Best doctor for the optometrists in Jacksonville. Passionate about helping patients.</p>
+            </div>
+        </div>
+    
+        <!-- Features Section -->
+        <div class="row mt-5">
+            <div class="col-md-3 feature-box" data-aos="fade-left" data-aos-duration="1000">
+                <div class="feature-icon"><i class="fas fa-eye"></i></div>
+                <h5 class="mt-3"><strong>Is Lasik Secure?</strong></h5>
+                <p>For the last 30 years, we have been in the industry and have earned honor.<br>123-123-1234</p>
+            </div>
+            <div class="col-md-3 feature-box" data-aos="fade-right" data-aos-duration="1000">
+                <div class="feature-icon"><i class="fas fa-microscope"></i></div>
+                <h5 class="mt-3"><strong>Advanced Technology</strong></h5>
+                <p>We provide special visual teaching techniques to help you grow faster.</p>
+            </div>
+            <div class="col-md-3 feature-box" data-aos="fade-left" data-aos-duration="1000">
+                <div class="feature-icon"><i class="fas fa-users"></i></div>
+                <h5 class="mt-3"><strong>Cooperative Staff</strong></h5>
+                <p>Our qualified staff from the industry provides you with the best professional knowledge.</p>
+            </div>
+            <div class="col-md-3 feature-box" data-aos="fade-right" data-aos-duration="1000">
+                <div class="feature-icon"><i class="fas fa-phone"></i></div>
+                <h5 class="mt-3"><strong>Get Appointment</strong></h5>
+                <p>Rush before all seats are reserved.<br>123-123-1234</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+
+    <div class="container my-5">
+        <div class="section-title">
+            <h2>MEET OUR <span style="color: #ff6600;">DIRECTORS</span></h2>
+            <p>We Have Best Professional Team To Care Your Eyes</p>
+        </div>
+    
+        <div id="doctorCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="doctor-card">
+                                <img src="/user_assets/doctor5.jpg" alt="Doctor Image" class="img-fluid">
+                                <h5 class="mt-3"><%-doctor.doctor_position%></h5>
+                                <h3><%-doctor.doctor_name%></h3>
+                                <p><%-doctor.doctor_desc%></p>
+                                <div class="social-icons">
+                                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="doctor-card">
+                                <img src="/user_assets/doctor4.jpg" alt="Doctor Image" class="img-fluid">
+                                <h5 class="mt-3"><%-doctor.doctor_position%></h5>
+                                <h3>Mr. John Doe</h3>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                <div class="social-icons">
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more carousel items if needed -->
+            </div>
+    
+            <button class="carousel-control-prev" type="button" data-bs-target="#doctorCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#doctorCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+
+    <section class="container my-5">
+        <h2 class="section-title text-center" data-aos="fade-up" data-aos-duration="1500">What Our Patients Say</h2>
+        <div class="row">
+            <div class="col-md-6" data-aos="flip-left" data-aos-duration="1500">
+                <div class="testimonial p-4 text-white rounded shadow" style="background-color: #007BFF;">
+                    <p class="mb-1">"The best surgical experience! The doctors were professional and caring."</p>
+                    <strong>- Sarah Johnson</strong>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="flip-right" data-aos-duration="1500">
+                <div class="testimonial p-4 text-white rounded shadow" style="background-color: #28A745;">
+                    <p class="mb-1">"Quick recovery thanks to the expert hands at SurgeryCare. Highly recommend!"</p>
+                    <strong>- Mark Allen</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Include AOS Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1500, // Slower animations
+        });
+    </script>
+
+
+    
+    
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- About Us -->
+                <div class="col-md-4">
+                    <h5 class="footer-title">About Us</h5>
+                    <p>Since 2001, we have helped many people improve their vision. We are proud to continue providing excellent eye care services.</p>
+                    <button class="btn btn-appointment"><a href="/appointment">Get Appointment</a></button>
+                    
+                </div>
+    
+                <!-- Quick Links -->
+                <div class="col-md-4">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <div class="row">
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Lenses</a></li>
+                                <li><a href="#">Eye Glass</a></li>
+                                <li><a href="#">Eye Frames</a></li>
+                                <li><a href="#">Repairing</a></li>
+                                <li><a href="#">Computerized</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Lasik</a></li>
+                                <li><a href="#">Fix Vision</a></li>
+                                <li><a href="#">Drops</a></li>
+                                <li><a href="#">Team</a></li>
+                                <li><a href="/page/privacypolice.html">Privacy & Policies</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Institute Hours -->
+                <div class="col-md-4">
+                    <h5 class="footer-title">Institute Hours</h5>
+                    <p>Monday - Friday: 09:00 - 17:00</p>
+                    <p>Saturday - Sunday: By Appointment</p>
+                </div>
+            </div>
+    
+            <div class="row mt-4">
+                <!-- Contact Information -->
+                <div class="col-md-4">
+                    <h5 class="footer-title">Contact Us</h5>
+                    <div class="contact-info">
+                        <i class="bi bi-house-door"></i>
+                        <p><%-intro.hospital_location%></p>
+                    </div>
+                    <div class="contact-info">
+                        <i class="bi bi-telephone"></i>
+                        <p><%-intro.mobile_no%></p>
+                    </div>
+                    <div class="contact-info">
+                        <i class="bi bi-envelope"></i>
+                        <p><%-intro.mobile_no%></p>
+                    </div>
+                </div>
+    
+                <!-- Social Media -->
+                <div class="col-md-4">
+                    <h5 class="footer-title">Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="https://wa.me/9422012864" target="_blank"><i class="bi bi-whatsapp"><%-intro.email%></i></a>
+                        <a href="https://www.facebook.com/YourPageUsername" target="_blank"><i class="bi bi-facebook"><%-intro.facebook_link%></i></a>
+                        <a href="https://twitter.com/YourUsername" target="_blank"><i class="bi bi-twitter"> <%-intro.twitter_link%></i></a>
+                        <a href="https://www.google.com" target="_blank"><i class="bi bi-google"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>2016 &copy; Webful Creations Vision. All Rights Reserved.</p>
+            <p><a href="/">Home</a> | <a href="/about">About</a> | <a href="/blog">Blog</a> | <a href="/service">Services</a> | <a href="/contact">Contact Us</a></p>
+        </div>
+    </footer>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<%-include("navbar.ejs")%>
+
+
+    <div class="container-fluid p-0">
+        <div class="about-banner">
+            <div class="about-overlay"></div>
+            <div class="about-content text-center">
+                <h1 class="fw-bold text-danger">Blog</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active text-primary" aria-current="page">Blog</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+
+        <div class="container mt-4">
+            <% if (Array.isArray(blog) && blog.length > 0) { %>
+                <% blog.forEach((row, i) => { %>
+                    <div class="row">
+                        <% if (i % 2 === 0) { %>
+                            <!-- Blog Post on Left, Sidebar on Right -->
+                            <div class="col-lg-8">
+                                <div class="card mb-4">
+                                    <img src="/<%= row.blog_image %>" class="card-img-top" alt="Blog Image" style="height: 300px; object-fit: cover; width: 100%;">
+
+                                    <div class="card-body">
+                                        <h2 class="card-title"><%= row.blog_title %></h2>
+                                        <p>
+                                            <strong>Date:</strong> <%= row.blog_date %> | 
+                                            <strong>Category:</strong> <%= row.blog_category %> | 
+                                            <strong>Author:</strong> <%= row.blog_author %>
+                                        </p>
+                                        <p class="card-text"><%= row.blog_details %></p>
+                                        <a href="#" class="btn btn-primary">Read More »</a>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <!-- Sidebar on Right -->
+                            <div class="col-lg-4">
+                                <div class="card mb-4">
+                                    <div class="card-header">Blog Categories</div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Lasik Care</li>
+                                        <li class="list-group-item">Eye Food/Drinks</li>
+                                        <li class="list-group-item">Get Eyes like Tiger</li>
+                                        <li class="list-group-item">Dream Frame</li>
+                                    </ul>
+                                </div>
+        
+                                <div class="card mb-4">
+                                    <div class="card-header">Optometrist Services</div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Post Lasik Care</li>
+                                        <li class="list-group-item">Eye Exam Technology</li>
+                                        <li class="list-group-item">Dry Eyes Services</li>
+                                        <li class="list-group-item">Emergency Services</li>
+                                    </ul>
+                                </div>
+                            </div>
+        
+                        <% } else { %>
+                            <!-- Sidebar on Left, Blog Post on Right -->
+                            <div class="col-lg-4">
+                                <div class="card mb-4">
+                                    <div class="card-header">Blog Categories</div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Lasik Care</li>
+                                        <li class="list-group-item">Eye Food/Drinks</li>
+                                        <li class="list-group-item">Get Eyes like Tiger</li>
+                                        <li class="list-group-item">Dream Frame</li>
+                                    </ul>
+                                </div>
+        
+                                <div class="card mb-4">
+                                    <div class="card-header">Optometrist Services</div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Post Lasik Care</li>
+                                        <li class="list-group-item">Eye Exam Technology</li>
+                                        <li class="list-group-item">Dry Eyes Services</li>
+                                        <li class="list-group-item">Emergency Services</li>
+                                    </ul>
+                                </div>
+                            </div>
+        
+                            <!-- Blog Post on Right -->
+                            <div class="col-lg-8">
+                                <div class="card mb-4">
+                                    <img src="/<%= row.blog_image %>" class="card-img-top" alt="Blog Image" style="height: 300px; object-fit: cover; width: 100%;">
+                                    
+                                    <div class="card-body">
+                                        <h2 class="card-title"><%= row.blog_title %></h2>
+                                        <p>
+                                            <strong>Date:</strong> <%= row.blog_date %> | 
+                                            <strong>Category:</strong> <%= row.blog_category %> | 
+                                            <strong>Author:</strong> <%= row.blog_author %>
+                                        </p>
+                                        <p class="card-text"><%= row.blog_details %></p>
+                                        <a href="#" class="btn btn-primary">Read More »</a>
+                                    </div>
+                                </div>
+                            </div>
+                        <% } %>
+                    </div> <!-- End Row -->
+                <% }); %>
+            <% } else { %>
+                <p>No blogs available.</p>
+            <% } %>
+        </div>
+        
+
+
+    
+
+        <%-include("footer.ejs")%>
+

@@ -1,0 +1,71 @@
+<%-include("navbar.ejs")%>
+
+
+<div class="container-fluid p-0">
+    <div class="about-banner">
+        <div class="about-overlay"></div>
+        <div class="about-content text-center">
+            <h1 class="fw-bold text-danger">Privacy Policy</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item "><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active text-primary" aria-current="page">Privacy policy</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="policy-section">
+                    <h2 class="text-center policy-title" data-aos="fade-up">Privacy & Policy</h2>
+                    <p class="text-center" data-aos="fade-up" data-aos-delay="200">
+                        Your privacy is important to us. This policy explains how we handle your personal data.
+                    </p>
+    
+                    <div class="row mt-4">
+                        <!-- First Column -->
+                        <div class="col-md-6" data-aos="fade-right">
+                            <h4><i class="icon-box1 bi bi-lock-fill"></i> Data Security</h4>
+                            <p>We take strong security measures to protect your personal data from unauthorized access.</p>
+                        </div>
+                        
+                        <!-- Second Column -->
+                        <div class="col-md-6" data-aos="fade-left">
+                            <h4><i class="icon-box2 bi bi-person-check-fill"></i> Patient Confidentiality</h4>
+                            <p>All medical records and personal information are kept confidential and shared only with consent.</p>
+                        </div>
+    
+                        <!-- Third Row -->
+                        <div class="col-md-6" data-aos="fade-right">
+                            <h4><i class="icon-box3 bi bi-shield-lock-fill"></i> Secure Payments</h4>
+                            <p>We use encrypted transactions to ensure safe and secure online payments.</p>
+                        </div>
+                        
+                        <div class="col-md-6" data-aos="fade-left">
+                            <h4><i class="icon-box4 bi bi-envelope-check-fill"></i> Communication Policy</h4>
+                            <p>We only contact you for appointment reminders, health tips, and consent-based updates.</p>
+                        </div>
+                    </div>
+    
+                    <div class="text-center mt-4">
+                        <button class="btn btn-primary" data-aos="zoom-in">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init(); // Initialize AOS Animations
+    </script>
+
+
+<%-include("footer.ejs")%>

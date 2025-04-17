@@ -1,0 +1,130 @@
+<%-include("navbar.ejs")%>
+
+    <!-- Top Bar -->
+    
+
+    <!-- Logo & Contact Section -->
+    
+
+    <div class="container-fluid p-0">
+        <div class="about-banner">
+            <div class="about-overlay"></div>
+            <div class="about-content text-center">
+                <h1 class="fw-bold text-danger">Service</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item "><a href="/home">Home</a></li>
+                        <li class="breadcrumb-item active text-primary" aria-current="page">Service</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+
+        <div class="container py-5">
+            <div class="row g-4">
+                <% if (Array.isArray(card) && card.length > 0) { %>
+                    <% card.forEach((row, i) => { %>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="service-box">
+                                <img src="/<%= row.card_image %>" alt="Service Image" class="service-img">
+                                <div class="service-content">
+                                    <h5 class="service-title"><%= row.card_title %></h5>
+                                    <p class="service-text"><%= row.card_description %></p>
+                                    <a href="#" class="read-more" onclick="openModal('<%= row.card_image %>', '<%= row.card_title %>', `<%= row.card_description %>`)">Read More »</a>
+                                </div>
+                            </div>
+                        </div>
+                    <% }); %>
+                <% } else { %>
+                    <p>No services available.</p>
+                <% } %>
+            </div>
+        </div>
+        
+        <!-- Modal Structure -->
+        <div id="serviceModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="modalTitle"></h2>
+                <img id="modalImage" src="" alt="Service Image">
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+
+        <script>
+            function openModal(image, title, description) {
+                document.getElementById('modalImage').src = '/' + image;
+                document.getElementById('modalTitle').textContent = title;
+                document.getElementById('modalDescription').textContent = description;
+                document.getElementById('serviceModal').style.display = 'flex';
+            }
+        
+            function closeModal() {
+                document.getElementById('serviceModal').style.display = 'none';
+            }
+        
+            window.onclick = function(event) {
+                if (event.target === document.getElementById('serviceModal')) {
+                    closeModal();
+                }
+            };
+        </script>
+
+
+
+
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-md-12">
+                    <div class="form-container text-center mt-5">
+                        <h2>GET APPOINTMENT</h2>
+                        <p>Fill In The Form Below</p>
+        
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" placeholder="Your full name ....">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" placeholder="Your Phone number ....">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="email" class="form-control" placeholder="Your Email address ....">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="date" class="form-control" placeholder="Preferred Date ....">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <select class="form-control">
+                                        <option>Select Doctor</option>
+                                        <option>Doctor A</option>
+                                        <option>Doctor B</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <select class="form-control">
+                                        <option>Select Service</option>
+                                        <option>Eye Checkup</option>
+                                        <option>Lasik Consultation</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <textarea class="form-control" rows="4" placeholder="Your message"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-submit w-100">SEND FORM!</button>
+                                </div>
+                            </div>
+                        </form>
+        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+   
+
+        <%-include("footer.ejs")%>

@@ -1,0 +1,840 @@
+
+       
+       html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    
+       
+       /* Top Bar */
+        .top-bar {
+            background-color: #cc5c1e;
+            color: white;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+        .social-icons a {
+            color: white;
+            margin-left: 10px;
+            text-decoration: none;
+        }
+        .social-icons a:hover {
+            opacity: 0.8;
+        }
+        /* Logo & Contact Section */
+        .logo-bar {
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .logo-text {
+            font-size: 28px;
+            font-weight: bold;
+            color: #144a7d;
+            text-align: center;
+        }
+        .logo-text span {
+            color: #cc5c1e;
+        }
+        .contact-info {
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .contact-info i {
+            color: #cc5c1e;
+        }
+        @media (min-width: 768px) {
+            .logo-text, .contact-info {
+                text-align: left;
+            }
+        }
+        /* Navigation */
+        .navbar {
+            background-color: #144a7d;
+        }
+        .navbar-nav .nav-link {
+            /* color: white !important; */
+            font-weight: bold;
+            padding: 10px 15px;
+            text-align: center;
+        }
+        .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+
+        /* welcome */
+
+        .welcome-section {
+            padding: 50px 0;
+        }
+        .welcome-text h1 {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .highlight {
+            color: #cc5c1e;
+        }
+        .welcome-text p {
+            font-size: 16px;
+            color: #555;
+        }
+        .doctor-badge {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .doctor-badge img {
+            width: 80px;
+        }
+
+
+
+        /* services */
+        .service-box {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .service-box:hover {
+            transform: translateY(-5px);
+        }
+        .service-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .service-content {
+            padding: 20px;
+            text-align: center;
+        }
+        .service-title {
+            color: #D9531E;
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .service-text {
+            color: #555;
+            font-size: 14px;
+        }
+        .read-more {
+            color: #D9531E;
+            font-weight: bold;
+            text-decoration: none;
+        }
+ */
+
+        /* why choose us  */
+
+        .section-title {
+            text-align: center;
+            font-weight: bold;
+        }
+        .section-title span {
+            color: #cc5c1e;
+        }
+        .faq-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .accordion-button {
+            background-color: #2e2e2e !important;
+            color: white !important;
+            font-weight: bold;
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: #1c1c1c !important;
+            color: white !important;
+        }
+        .testimonial {
+            background: #e9f5fc;
+            padding: 15px;
+            border-radius: 10px;
+            font-style: italic;
+            position: relative;
+        }
+        .testimonial::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 20px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: #e9f5fc transparent transparent transparent;
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .testimonial-author h6 {
+            margin: 0;
+            font-weight: bold;
+        }
+        .testimonial-author p {
+            margin: 0;
+            font-size: 14px;
+            color: gray;
+        }
+
+        /* recent news section */
+
+        .section-title {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .section-title span {
+            color: #cc5c1e;
+        }
+        .news-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        .news-card img {
+            width: 100%;
+            height: auto;
+        }
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .news-content {
+            padding: 15px;
+        }
+        .news-content h5 {
+            font-weight: bold;
+        }
+        .news-content p {
+            color: #6c757d;
+            font-size: 14px;
+        }
+        .read-more {
+            color: #cc5c1e;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+
+        /* about page  */
+
+
+        
+                .circle-img {
+                    width: 100%;
+                    max-width: 400px;
+                    border-radius: 50%;
+                    display: block;
+                    margin: auto;
+                }
+                .feature-icon {
+                    background-color: #d67236;
+                    color: white;
+                    width: 60px;
+                    height: 60px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    font-size: 24px;
+                    margin: auto;
+                }
+                .feature-box {
+                    text-align: center;
+                }
+
+
+                /* Director section*/
+
+                .doctor-card {
+                    background: #f8f9fa;
+                    padding: 20px;
+                    border-radius: 10px;
+                    text-align: center;
+                }
+                .doctor-card img {
+                    width: 100%;
+                    border-radius: 10px;
+                }
+                .carousel-control-prev, .carousel-control-next {
+                    width: 5%;
+                }
+                .social-icons a {
+                    margin: 0 10px;
+                    color: #333;
+                    font-size: 18px;
+                }
+                .section-title {
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
+                .section-title h2 {
+                    font-weight: bold;
+                    color: #d36d1e;
+                }
+
+        /* footer */
+
+        body {
+            background-color: #f8f9fa;
+        }
+        .footer {
+            background: #333;
+            color: #fff;
+            padding: 50px 0;
+            position: relative;
+        }
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .footer-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #cc5c1e;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .contact-info i {
+            font-size: 20px;
+            color: #cc5c1e;
+        }
+        .btn-appointment {
+            background: #cc5c1e;
+            border: none;
+            padding: 10px 15px;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        .btn-appointment:hover {
+            background: #a04b18;
+        }
+        .social-icons a {
+            font-size: 20px;
+            margin-right: 15px;
+        }
+        .footer-bottom {
+            background: #222;
+            color: #bbb;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        /* appointment form */
+
+        /* body {
+            background-image: url('https://via.placeholder.com/1800x800'); 
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        } */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* background: rgba(0, 0, 0, 0.6);  */
+        }
+        .appointment-container {
+            position: relative;
+            z-index: 2;
+            background: rgba(241, 235, 235, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 900px;
+            margin: auto;
+        }
+        .form-control, .form-select {
+            border-radius: 5px;
+            padding: 12px;
+        }
+        .btn-custom {
+            background-color: #e65c00;
+            color: rgb(6, 1, 1);
+            padding: 12px 20px;
+            border: none;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .btn-custom:hover {
+            background-color: #cc5200;
+        }
+
+
+        .announcement-bar {
+            background-color: #28a745;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px 0;
+        }
+
+        .floating-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+        /* Call button */
+        .call-button {
+            display: flex;
+            align-items: center;
+            background-color: #ddd;
+            border-radius: 50px;
+            padding: 10px 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .call-button img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+        .call-text {
+            display: flex;
+            flex-direction: column;
+            font-size: 16px;
+        }
+        .call-text span {
+            font-size: 12px;
+            background-color: #0066cc;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 5px;
+            margin-bottom: 3px;
+        }
+        /* Action buttons */
+        .action-button {
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: none;
+            width: 220px;
+            color: white;
+            text-align: center;
+        }
+        .health-check {
+            background-color: #28a745;
+        }
+        .enquire {
+            background-color: #f1b400;
+        }
+
+        /* appointment form */
+
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-in-out;
+        }
+        .sidebar-info {
+            animation: fadeInRight 1.2s ease-in-out;
+        }
+        .form-control, .form-select {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .form-control:focus, .form-select:focus {
+            transform: scale(1.02);
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+        }
+        .submit-btn {
+            font-size: 18px;
+            font-weight: bold;
+            transition: transform 0.2s ease-in-out;
+        }
+        .submit-btn:hover {
+            transform: translateY(-3px);
+        }
+
+
+        /* about page banner */
+
+        .about-banner {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            background: url('/assets/4.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .about-overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: rgba(0, 0, 50, 0.7);
+            clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        .about-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .breadcrumb a {
+            color: #28a745;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* about page appointment form */
+
+
+        body {
+            background: url('background-image.jpg') no-repeat center center/cover;
+        }
+        .form-container {
+            background: rgba(0, 0, 0, 0.6); 
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        input, select, textarea {
+            background: white !important;
+            color: black !important;
+        }
+        .btn-submit {
+            background: #d35400;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* contact page overlay */
+            /* Floating social bar container */
+            .floating-icons-container {
+                position: fixed;
+                top: 50%;
+                right: 20px;
+                transform: translateY(-50%);
+                z-index: 1000;
+            }
+            .floating-icons-container a {
+                display: block;
+                margin: 10px 0;
+                width: 50px;
+                height: 50px;
+                text-align: center;
+                line-height: 50px;
+                border-radius: 50%;
+                color: white;
+                font-size: 24px;
+                transition: 0.3s;
+            }
+            .icon-facebook { background: #3b5998; }
+            .icon-instagram { background: #E1306C; }
+            .icon-phone { background: #000; }
+            .icon-whatsapp { background: #25D366; }
+    
+            /* Hover effect */
+            .floating-icons-container a:hover {
+                opacity: 0.8;
+            }
+
+            
+            body { font-family: Arial, sans-serif; text-align: center; background: #f4f4f4; margin: 0; }
+            .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); }
+            .modal-content { background: white; padding: 20px; margin: 10% auto; width: 350px; border-radius: 10px; text-align: left; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); }
+            .close { float: right; cursor: pointer; font-size: 20px; font-weight: bold; }
+            button { background: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s; }
+            button:hover { background: #0056b3; }
+            input { width: 100%; padding: 8px; margin: 5px 0; border: 1px solid #ccc; border-radius: 5px; }
+            .announcement-container {
+        overflow: hidden;
+        white-space: nowrap;
+        background: #ffeb3b;
+        color: #d32f2f;
+        font-weight: bold;
+        padding: 8px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        position: relative;
+    }
+    
+    .announcement {
+        display: inline-block;
+        padding-left: 100%;
+        animation: scrollText 10s linear infinite;
+    }
+    
+    @keyframes scrollText {
+        from {
+            transform: translateX(100%);
+        }
+        to {
+            transform: translateX(-100%);
+        }
+    }
+
+
+    
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        background: rgb(120, 211, 216);
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        width: 50%;
+        max-width: 500px;
+        position: relative;
+    }
+
+    .modal-content img {
+        width: 100%;
+        height: auto;
+        margin: 10px 0;
+    }
+
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+
+
+    
+        body {
+            background-color: #f8f9fa;
+        }
+        .policy-section {
+            background: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .policy-title {
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        .icon-box1 {
+            font-size: 40px;
+            color: #3498db;
+        }
+        .icon-box2 {
+            font-size: 40px;
+            color: #dba634;
+        }
+        .icon-box3 {
+            font-size: 40px;
+            color: #34db77;
+        }
+        .icon-box4 {
+            font-size: 40px;
+            color: #db3c34;
+        }
+
+        .news-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: 0.3s;
+            background: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+    
+        .news-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+    
+        .news-content {
+            padding: 15px;
+        }
+    
+        .news-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    
+        .news-meta {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+    
+        .news-description {
+            font-size: 14px;
+            color: #555;
+        }
+    
+        .read-more {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    
+        .read-more:hover {
+            text-decoration: underline;
+        }
+    
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 500px;
+            text-align: center;
+        }
+    
+        .modal-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .hero-section {
+            position: relative;
+            background: url('https://www.masonseyecare.com.au/wp-content/uploads/2020/12/banner_03.jpg') no-repeat center center/cover;
+            height: 550px; 
+            display: flex;
+            align-items: center;
+            /* justify-content: center; */
+            /* text-align: center; */
+            color: white;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); 
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            padding: 40px;
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+        }
+
+        .btn-custom {
+            background-color: #f8b400;
+            color: black;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn-custom:hover {
+            background-color: #ffcf40;
+            color: black;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .hero-content p {
+                font-size: 1rem;
+            }
+        }
+    
+    
+
+    
+     
+
+
+        
+
+
+   

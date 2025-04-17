@@ -1,0 +1,355 @@
+<%-include("navbar.ejs")%>
+
+
+    
+ 
+
+    <div class="container-fluid">
+        <div class="row ">
+            <div class="col-12 p-0 ">
+                
+                    
+                
+                <div class="hero-section">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <h1>Clear Vision, Brighter Future</h1>
+                        <p>Your trusted eye care specialist for a healthier, sharper vision.</p>
+                        <a href="/appointment" class="btn btn-custom mt-3">Book an Appointment</a>
+                    </div>
+                </div>
+                
+                </body>
+                </html>
+                
+                
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container welcome-section">
+        <div class="row align-items-center">
+            <div class="col-lg-6 text-center text-lg-start">
+                <img src="/user_assets/doctors-team.jpg" alt="Optometrist Team" class="img-fluid rounded">
+            </div>
+            <div class="col-lg-6 welcome-text">
+                <h1>WELCOME TO <span class="highlight"><%-intro.hospital_name%></span></h1>
+                <h4><%-aboutus.about_tagline%></h4>
+                <p>
+                    <%-aboutus.about_details%>
+                </p>
+                <div class="doctor-badge">
+                    <img src="/user_assets/award1.png" alt="Award Badge">
+                    <img src="/user_assets/award2.png" alt="Award Badge">
+                    <div>
+                        <strong><%-aboutus.main_doctor%></strong>
+                        <p>Best doctor for optometrists in Jacksonville. Passionate about helping patients.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid  service-section ">
+        <h2 class="fw-bold text-center mt-3">OUR EYE SERVICES</h2>
+        <h3 class="text-center text-primary">Our Services To Give Best Care For Your Eyes</h3>
+        <hr class="w-25 mx-auto border-2 border-light">
+
+        <div class="container py-5">
+            <div class="row g-4">
+                <% if (Array.isArray(card) && card.length > 0) { %>
+                    <% card.slice(0, 3).forEach((row, i) => { %> <!-- Limiting loop to first 3 cards -->
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="service-box">
+                                <img src="/<%= row.card_image %>" alt="Service Image" class="service-img">
+                                <div class="service-content">
+                                    <h5 class="service-title"><%= row.card_title %></h5>
+                                    <p class="service-text"><%= row.card_description %></p>
+                                    <a href="#" class="read-more" onclick="openModal('<%= row.card_image %>', '<%= row.card_title %>', `<%= row.card_description %>`)">Read More »</a>
+                                </div>
+                            </div>
+                        </div>
+                    <% }); %>
+                <% } else { %>
+                    <p>No services available.</p>
+                <% } %>
+            </div>
+        </div>
+        
+        
+        <!-- Modal Structure -->
+        <div id="serviceModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="modalTitle"></h2>
+                <img id="modalImage" src="" alt="Service Image">
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+
+        <script>
+            function openModal(image, title, description) {
+                document.getElementById('modalImage').src = '/' + image;
+                document.getElementById('modalTitle').textContent = title;
+                document.getElementById('modalDescription').textContent = description;
+                document.getElementById('serviceModal').style.display = 'flex';
+            }
+        
+            function closeModal() {
+                document.getElementById('serviceModal').style.display = 'none';
+            }
+        
+            window.onclick = function(event) {
+                if (event.target === document.getElementById('serviceModal')) {
+                    closeModal();
+                }
+            };
+        </script>
+
+    </div>
+
+    <div class="floating-buttons">
+        <!-- Call Button -->
+        <div class="call-button">
+            <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Call Icon">
+            <div class="call-text">
+                <span>Call Us Now</span>
+                <a href="tel:+91 9422012864"><%-intro.mobile_no%></a>
+                
+            </div>
+        </div>
+    
+        <!-- Book Health Check-up -->
+        <button class="action-button health-check" id="openModal">Book an EYE Check-Up</button>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+        
+                <!-- Announcement Section with Scrolling Effect -->
+                <div class="announcement-container">
+                    <div class="announcement">
+                        📢 Important: Appointments are available only for the next 15 days. Please book your slot in advance!
+                    </div>
+                </div>
+        
+                <h2 style="color: #007bff;">Book Your Eye Checkup</h2>
+                <form id="appointmentForm" action="/user/save_appoint" method="post" enctype="multipart/form-data">
+                    <label for="name">Name:</label>
+                    <input type="text" name="appoint_name" placeholder="Enter your name" required><br><br>
+
+                    <label for="name">phone:</label>
+                    <input type="text" name="appoint_phone" placeholder="Enter your phone no" required><br><br>
+        
+                    <label for="date">Preferred Date:</label>
+                    <input type="date" id="appoint_date" name="appoint_date" required><br><br>
+        
+                    <label for="Time">Preferred Time:</label>
+                    <input type="time" id="appoint_time" name="appoint_time" required><br><br>
+
+                    <label for="Time">Message:</label>
+                    <input type="time" id="appoint_msg" name="appoint_msg" required><br><br>
+        
+                    <button type="submit">Confirm Appointment</button>
+                </form>
+            </div>
+        </div>
+        
+        
+        
+        <script>
+            document.getElementById('openModal').addEventListener('click', function() {
+                document.getElementById('modal').style.display = 'block';
+            });
+        
+            document.querySelector('.close').addEventListener('click', function() {
+                document.getElementById('modal').style.display = 'none';
+            });
+        
+            window.addEventListener('click', function(event) {
+                if (event.target === document.getElementById('modal')) {
+                    document.getElementById('modal').style.display = 'none';
+                }
+            });
+        
+            // Show alert when form is submitted
+            document.getElementById('appointmentForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevents default form submission
+        
+                alert("Appointment successfully registered!");
+        
+                // Submit the form after the alert
+                this.submit();
+            });
+        
+            // Set min and max date (only next 15 days available)
+            let today = new Date();
+            let maxDate = new Date();
+            maxDate.setDate(today.getDate() + 15); // Add 15 days
+        
+            let minDateStr = today.toISOString().split("T")[0];
+            let maxDateStr = maxDate.toISOString().split("T")[0];
+        
+            document.getElementById("appoint_date").setAttribute("min", minDateStr);
+            document.getElementById("appoint_date").setAttribute("max", maxDateStr);
+        
+            // Restrict time selection (only 10 hours available)
+            document.getElementById("appoint_time").addEventListener("change", function() {
+                let selectedTime = this.value;
+                let selectedHour = parseInt(selectedTime.split(":")[0]); // Extract hour
+        
+                if (selectedHour < 9 || selectedHour > 19) {
+                    alert("Please select a time between 09:00 AM and 07:00 PM.");
+                    this.value = ""; // Reset invalid selection
+                }
+            });
+        </script>
+        
+    
+        <!-- Enquire -->
+        
+        
+    </div>
+
+
+    <div class="container my-5">
+        <!-- Section Title -->
+        <div class="text-center mb-4 animate__animated animate__fadeInLeft animate__fadeInRight">
+            <h2 class="section-title">WHY CHOOSE <span>US?</span></h2>
+            <p>We Have Best Professional Team To Care Your Eyes</p>
+            <hr class="w-25 mx-auto border-2 border-dark">
+        </div>
+    
+        <div class="row">
+            <!-- FAQ Section -->
+            <div class="col-12 col-md-7">
+                <div class="faq-container">
+                    <div class="accordion" id="faqAccordion">
+                        <!-- FAQ 1 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    Do we provide consultation for free?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries but also the leap into electronic typesetting.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FAQ 2 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Is our procedure latest to technology?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, we use the latest cutting-edge technology for all our procedures to ensure the best care.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FAQ 3 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Do we respect your time and care your eyes most?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our team ensures timely appointments and the best possible eye care solutions.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FAQ 4 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    What financial solutions do we have to help you?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We provide flexible financing options and insurance coverage to make your treatment accessible.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Testimonial Section -->
+            <div class="col-12 col-md-5">
+                <div class="testimonial">
+                    A quick brown fox jumps over the lazy dog. Yeh shaam mastani madhosh kiye jaaye, mujhe dor koi khiche teri orh liye jaye. Once upon a time, there was a thirsty crow who flew here and there in search of water but could not find it anywhere.
+                </div>
+                <div class="testimonial-author">
+                    <img src="/user/assets/testi3.jpg" alt="User">
+                    <div>
+                        <h6>TINA DOE</h6>
+                        <p>IMPORTANT PERSON, SOME COMPANY</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container my-5">
+        <!-- Section Title -->
+        <div class="text-center mb-4">
+            <h2 class="section-title">RECENT <span>NEWS</span></h2>
+            <p>What's Going On In Our Blog?</p>
+            <hr class="w-25 mx-auto border-2 border-dark">
+        </div>
+    
+        <!-- News Cards -->
+        
+
+            
+        <div class="container py-5">
+            <h2 class="section-title text-center mb-4">Recent News</h2>
+            <div class="row g-4">
+                <% if (Array.isArray(blog) && blog.length > 0) { %>
+                    <% blog.slice(0, 3).forEach((row, i) => { %> <!-- Limiting loop to first 3 news cards -->
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="news-card">
+                                <img src="/<%= row.blog_image %>" alt="News Image" class="news-img">
+                                <div class="news-content p-3">
+                                    <h5 class="news-title"><%= row.blog_title %></h5>
+                                    <p class="news-meta"><strong>Date:</strong> <%= row.blog_date %> | <strong>Category:</strong> <%= row.blog_category %> | <strong>Author:</strong> <%= row.blog_author %></p>
+                                    <p class="news-description"><%= row.blog_details.substring(0, 100) %>... <a href="#" class="read-more" onclick="openModal('<%= row.blog_image %>', '<%= row.blog_title %>', `<%= row.blog_details %>`)">Read More »</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    <% }); %>
+                <% } else { %>
+                    <p class="text-center">No recent news available.</p>
+                <% } %>
+            </div>
+        </div>
+        
+        
+    </div>
+
+<div class="container-fluid p-0">
+    <div class="row">
+        <div col-12>
+    <div class="announcement-bar">
+        <marquee behavior="scroll" direction="left">
+            <%-intro.announcement%> <strong>Important Announcement</strong>
+        </marquee>
+    </div>
+</div>
+</div>
+</div>
+
+<%-include("footer.ejs")%>
+
+
+   

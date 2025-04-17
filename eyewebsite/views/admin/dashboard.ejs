@@ -1,0 +1,175 @@
+<%-include("navbar.ejs")%>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment List</title>
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f0f8ff; color: #333; }
+        .container { width: 80%; margin: 20px auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        table, th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #007bff; color: white; }
+        .page-btn { padding: 8px 12px; margin: 3px; border: none; background: #007bff; color: white; cursor: pointer; border-radius: 4px; transition: all 0.3s ease; }
+        .page-btn:hover { background: #0056b3; transform: scale(1.1); }
+        .page-btn.active { background: #28a745; }
+        .dt-buttons { margin-bottom: 10px; }
+        .download-btn { padding: 10px 15px; background: #ffc107; color: #333; border: none; border-radius: 5px; cursor: pointer; transition: all 0.3s ease; }
+        .download-btn:hover { background: #e0a800; transform: scale(1.1); }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Appointment List</h2>
+        <input type="text" id="search" placeholder="Search by Patient Name" oninput="filterData()" 
+       style="width: 100%; max-width: 300px; padding: 10px; font-size: 16px; border: 2px solid #007bff; 
+              border-radius: 8px; outline: none; transition: all 0.3s ease-in-out; text-align: center;"
+       onfocus="this.style.borderColor='#0056b3'; this.style.boxShadow='0 0 8px rgba(0, 123, 255, 0.5)';"
+       onblur="this.style.borderColor='#007bff'; this.style.boxShadow='none';">
+       <br><br>
+
+
+        <!-- Download Buttons -->
+        <div class="dt-buttons">
+            <button id="csvDownload" class="download-btn"><i class="fas fa-file-csv"></i> Download CSV</button>
+            <button id="excelDownload" class="download-btn"><i class="fas fa-file-excel"></i> Download Excel</button>
+            <button id="pdfDownload" class="download-btn"><i class="fas fa-file-pdf"></i> Download PDF</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>SrNo</th>
+                    <th>Patient Name</th>
+                    <th>Patient Phone</th>
+                    <th>Appointment Date</th>
+                    <th>Appointment Time</th>
+                    <th>message</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+
+        <div id="pagination"></div>
+    </div>
+
+    <script>
+        let data = <%- JSON.stringify(appoint) %>;
+        let currentPage = 1;
+        let rowsPerPage = 5;
+        let filteredData = [...data];
+
+        function displayData(page) {
+            const tableBody = document.getElementById("tableBody");
+            tableBody.innerHTML = "";
+
+            let start = (page - 1) * rowsPerPage;
+            let end = start + rowsPerPage;
+            let paginatedItems = filteredData.slice(start, end);
+
+            if (paginatedItems.length === 0) {
+                tableBody.innerHTML = `<tr><td colspan="4">No results found</td></tr>`;
+                return;
+            }
+
+            paginatedItems.forEach((item, index) => {
+                let row = `<tr>
+                                <td>${start + index + 1}</td>
+                                <td>${item.appoint_name}</td>
+                                <td>${item.appoint_phone}</td>
+
+                                <td>${item.appoint_date}</td>
+                                <td>${item.appoint_time}</td>
+                                <td>${item.appoint_msg}</td>
+
+                            </tr>`;
+                tableBody.innerHTML += row;
+            });
+
+            displayPagination();
+        }
+
+        function displayPagination() {
+            const pagination = document.getElementById("pagination");
+            pagination.innerHTML = "";
+
+            let totalPages = Math.ceil(filteredData.length / rowsPerPage);
+
+            for (let i = 1; i <= totalPages; i++) {
+                let button = document.createElement("button");
+                button.innerText = i;
+                button.classList.add("page-btn");
+                if (i === currentPage) {
+                    button.classList.add("active");
+                }
+                button.onclick = () => {
+                    currentPage = i;
+                    displayData(i);
+                };
+                pagination.appendChild(button);
+            }
+        }
+
+        function filterData() {
+            let searchValue = document.getElementById("search").value.toLowerCase();
+            filteredData = data.filter(item => item.appoint_name.toLowerCase().includes(searchValue));
+
+            currentPage = 1; 
+            displayData(currentPage);
+        }
+
+        document.getElementById("csvDownload").addEventListener("click", () => alert("CSV Downloading..."));
+        document.getElementById("excelDownload").addEventListener("click", () => alert("Excel Downloading..."));
+        document.getElementById("pdfDownload").addEventListener("click", () => alert("PDF Downloading..."));
+
+        displayData(currentPage);
+    </script>
+
+
+
+<div class="container p-4">
+    <h1>Contact us list*</h1>
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-bordered table-sm ">
+          <tr>
+            <th>SrNo*</th>
+            <th>Patient name*</th>
+            <th>Patient email*</th>
+            <th>Contact website*</th>
+            <th>Patient msg*</th>
+          </tr>
+          <% contact.map((row,i)=>{ %>
+            <tr>
+              
+              <td><%-i+1%></td>
+              <td><%-row.contact_name %></td>
+              <td><%-row.contact_name %></td>
+              <td><%-row.contact_website %></td>
+              <td><%-row.contact_msg %></td>
+
+            </tr>
+          <% }) %>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+</body>
+</html>
+
+
+<%-include("footer.ejs")%>

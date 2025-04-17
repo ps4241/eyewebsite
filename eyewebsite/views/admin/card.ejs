@@ -1,0 +1,67 @@
+<%-include("navbar.ejs")%>
+
+<div class="container">
+<div class="row">
+    <div class="col-12">
+        <h1>Service page</h1>
+<form action="/admin/save_card" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label  class="form-label">Upload Image*</label>
+        <input type="file" name="card_image" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label  class="form-label">Card Title*</label>
+        <input type="text" name="card_title" class="form-control"  placeholder="Enter card title" required>
+    </div>
+    <div class="mb-3">
+        <label for="cardDescription" class="form-label">Card Description*</label>
+        <textarea class="form-control" name="card_description" rows="3" placeholder="Enter description" required></textarea>
+    </div>
+    <div class="">
+        <button  class="btn btn-primary text-white">Save</button>
+    </div>
+</form>
+</div>
+</div>
+</div>
+
+
+<div class="container p-4">
+    <h1>Service card list</h1>
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-bordered table-sm ">
+          <tr>
+            <th>Action*</th>
+            <th>SrNo*</th>
+            <th>Image*</th>
+            <th>Title*</th>
+            <th>Description*</th>
+          </tr>
+          <% card.map((row,i)=>{ %>
+            <tr>
+              <td>
+                <a href="/admin/delete_card/<%=row.card_id%>"><button>❌</button></a>
+
+              </td>
+              <td><%-i+1%></td>
+              <td>
+                <img src="/<%-row.card_image %> " width="100px">
+                
+            </td>
+              <td><%-row.card_title %></td>
+              <td><%-row.card_description %></td>
+  
+  
+  
+            </tr>
+          <% }) %>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<%-include("footer.ejs")%>

@@ -1,0 +1,99 @@
+<%-include("navbar.ejs")%>
+
+
+<div class="container">
+    <div class="row">
+            <h1>Doctor</h1>
+    <form action="/admin/save_doctor" method="post" enctype="multipart/form-data">
+        <div class=" col-3 mb-3">
+            <label  class="form-label">Upload Image*</label>
+            <input type="file" name="doctor_photo" class="form-control" required >
+        </div>
+        <div class="col-md-3 mb-3">
+            <img src="/" width="100px">
+         </div>
+        <div class=" col-4 mb-3">
+            <label  class="form-label">Position*</label>
+            <input type="text" name="doctor_position" class="form-control"  placeholder="Enter doctor position" required>
+        </div>
+        <div class=" col-4 mb-3">
+            <label  class="form-label">Name*</label>
+            <input type="text" name="doctor_name" class="form-control"  placeholder="Enter doctor name" required>
+        </div>
+        <div class="mb-3">
+            <label for="cardDescription" class="form-label"></label>Description*</label>
+            <textarea class="form-control" name="doct_desc" rows="3" placeholder="Enter description" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="cardDescription" class="form-label"></label>mobile no*</label>
+            <input class="form-control" name="doct_mobile"  placeholder="Enter mobile no" required>
+        </div>
+        <div class="mb-3">
+            <label for="cardDescription" class="form-label"></label>twitter link*</label>
+            <textarea class="form-control" name="doct_twitter"  placeholder="Enter twitter link" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="cardDescription" class="form-label"></label>facebook link*</label>
+            <textarea class="form-control" name="doct_facebook"  placeholder="Enter facebook link" required></textarea>
+        </div>
+       
+        
+        <div class="">
+            <button  class="btn btn-primary text-white">Save</button>
+        </div>
+    </form>
+    </div>
+    </div>
+
+
+
+    <div class="container p-4">
+        <h1>Service card list</h1>
+        <div class="row">
+          <div class="col-md-12">
+            <table class="table table-bordered table-sm ">
+              <tr>
+                <th>Action*</th>
+                <th>SrNo*</th>
+                <th>Image*</th>
+                <th>position*</th>
+                <th>name*</th>
+                <th>details*</th>
+                <th>Mobile no*</th>
+                <th>twitter*</th>
+                <th>facebbok*</th>
+
+
+
+              </tr>
+              <% doctor.map((row,i)=>{ %>
+                <tr>
+                  <td>
+                    <a href="/admin/delete_doctor/<%=row.doctor_id%>"><button>❌</button></a>
+    
+                  </td>
+                  <td><%-i+1%></td>
+                  <td>
+                    <img src="/<%-row.doctor_photo %> " width="100px">
+                    
+                </td>
+                  <td><%-row.doctor_position %></td>
+                  <td><%-row.doctor_name %></td>
+                  <td><%-row.doct_desc %></td>
+                  <td><%-row.doct_mobile %></td>
+                  <td><%-row.doct_twitter %></td>
+                  <td><%-row.doct_facebbok %></td>
+
+
+      
+      
+      
+                </tr>
+              <% }) %>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+<%-include("footer.ejs")%>
